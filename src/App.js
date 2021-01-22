@@ -24,6 +24,17 @@ function App() {
 
 
   ])
+  
+
+  const checkTodo = (id) => {
+    console.log(id);
+    setTodos(todos.map(todo => {
+      if(todo.id === id) 
+      todo.isCompleted = !todo.isCompleted;
+      console.log(todo.isCompleted)
+      return todo;
+    }))
+  }
 
 
   // add a todo
@@ -38,7 +49,7 @@ function App() {
   }
   return <div>
     <ToDoForm addTodo={addTodo} />
-    <ToDoList todos={todos} />
+    <ToDoList todos={todos} checkTodo={checkTodo}/>
   </div>;
 }
 

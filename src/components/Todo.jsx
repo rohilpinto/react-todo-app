@@ -1,7 +1,10 @@
 import React from "react";
 import { Card, CardContent, Typography, Container, IconButton } from "@material-ui/core";
 import { Check, Delete } from "@material-ui/icons";
-function Todo({ title }) {
+function Todo({ title, checkTodo, id }) {
+
+  const markComplete = () => checkTodo(id);
+
   return (
     <div>
       <Container>
@@ -9,7 +12,7 @@ function Todo({ title }) {
         <CardContent>
           {/* Check Icon */}
           <Typography variant="h5" component="h2">
-            <IconButton>
+            <IconButton onClick={markComplete}>
               <Check style={{ color: "green" }} />
             </IconButton>
 

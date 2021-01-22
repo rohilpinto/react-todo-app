@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { FormControl, Container, TextField, Button } from "@material-ui/core";
 
-const TodoForm = ({addTodo }) => {
+const TodoForm = ({addTodo  }) => {
   const [text, setText] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
