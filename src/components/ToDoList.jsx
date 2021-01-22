@@ -1,10 +1,15 @@
 import React from 'react'
 import Todo from './Todo'
 
-const ToDoList = () => {
+const ToDoList = ({ todos }) => {
 	return (
 		<div>
-		 <Todo/>			
+			{todos.map((todo) => {
+				return (
+					<Todo key={todo.id} title={todo.title} />
+				)
+			})}
+ 	
 		</div>
 	)
 }
